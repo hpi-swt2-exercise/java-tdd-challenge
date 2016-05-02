@@ -19,8 +19,14 @@ import phones.system.RejectReason;
 public class DefaultPhoneSystem implements PhoneSystem {
     
     private final Map<String, ConnectedPhone> phones = new HashMap<>();
+    private final Function<? super PhoneSocket, ? extends ConnectedPhone> factory;
     
     public DefaultPhoneSystem() {
+        this(DefaultPhone::new);
+    }
+
+    public DefaultPhoneSystem(Function<? super PhoneSocket, ? extends ConnectedPhone> factory) {
+        this.factory = factory;
     }
 
     @Override
@@ -29,10 +35,10 @@ public class DefaultPhoneSystem implements PhoneSystem {
     }
     
     protected ConnectedPhone internalGetPhone(String number) {
-        return phones.computeIfAbsent(number, n -> newPhone(n, DefaultPhone::new));
+        return phones.computeIfAbsent(number, this::newPhone);
     }
     
-    protected ConnectedPhone newPhone(String number, Function<? super PhoneSocket, ? extends ConnectedPhone> factory) {
+    protected ConnectedPhone newPhone(String number) {
         return factory.apply(new DefaultSocket(number));
     }
     
