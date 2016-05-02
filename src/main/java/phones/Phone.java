@@ -1,7 +1,5 @@
 package phones;
 
-import java.util.List;
-
 public interface Phone {
     
     String getNumber();

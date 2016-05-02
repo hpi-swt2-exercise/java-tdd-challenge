@@ -1,5 +1,8 @@
 package phones;
 
+/**
+ * The visible state of a phone.
+ */
 public enum PhoneStatus {
     
     /**
@@ -30,5 +33,5 @@ public enum PhoneStatus {
     /**
      * The partner rejected or terminated the call.
      */
-    CANCELLED;
+    CANCELED;
 }

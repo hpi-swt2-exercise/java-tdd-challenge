@@ -49,11 +49,11 @@ public class DefaultPhone implements ConnectedPhone {
     @Override
     public void receive(CallIncoming request) {
         incoming = request;
-        call = request.accept(this::onMessageReceive, this::onCallEnd);
+        call = incoming.accept(this::onMessageReceive, this::onCallEnd);
     }
 
     @Override
-    public void cancelled(CallIncoming request) {
+    public void canceled(CallIncoming request) {
     }
     
     protected void onCallReject(RejectReason reason) {
