@@ -7,6 +7,7 @@ To participate, please follow these simple steps:
 
 * You need to be logged-in with your Github account.
 * Click the "Fork" button in the upper right!
+* In your [repository's settings](/settings), enable issue tracking.
 
 ## 2) Set-up Travis CI for your fork
 
@@ -24,13 +25,13 @@ To participate, please follow these simple steps:
 
 ## 4) Commit and push
 
-* When you are done, push your changes!
+* When you are done, push your changes.
 * Travis CI will now try to build your project.
 
 ## 5) Check your inbox
 
 * You will be notified of problems via Github issues.
-* While you wait, see if your code can use some refactorings!
+* While you wait, see if your code can use some refactorings.
 
 ## 6) Repeat steps 3 to 5 until you are done
 
