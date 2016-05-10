@@ -7,4 +7,4 @@ before_install:
  - sudo pip install -r travis/requirements.txt
  - python ./travis/try_issues.py
 after_success:
- - bash ./travis/features.sh
+ - bash ./travis/check.sh
